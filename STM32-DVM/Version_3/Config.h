@@ -1,5 +1,5 @@
 /*
- *   Copyright (C) 2015,2016,2017,2018 by Jonathan Naylor G4KLX
+ *   Copyright (C) 2015,2016,2017,2018,2020 by Jonathan Naylor G4KLX
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -44,11 +44,13 @@
 // For the original Arduino Due pin layout
 // #define ARDUINO_DUE_PAPA
 
-// For the ZUM V1.0 and V1.0.1 boards pin layout
-// #define ARDUINO_DUE_ZUM_V10
-
+// #if defined(STM32F1)
 // For the SQ6POG board
 // #define STM32F1_POG
+// #else
+// For the ZUM V1.0 and V1.0.1 boards pin layout
+// #define ARDUINO_DUE_ZUM_V10
+// #endif
 
 // For the SP8NTH board
 // #define ARDUINO_DUE_NTH
@@ -72,8 +74,8 @@
 // To reduce CPU load, you can remove the DC blocker by commenting out the next line
 #define USE_DCBLOCKER
 
-// Constant Service LED once repeater is running 
-// Do not use if employing an external hardware watchdog 
+// Constant Service LED once repeater is running
+// Do not use if employing an external hardware watchdog
 // #define CONSTANT_SRV_LED
 
 // Use the YSF and P25 LEDs for NXDN
@@ -82,5 +84,7 @@
 // Use the D-Star and DMR LEDs for POCSAG
 // #define USE_ALTERNATE_POCSAG_LEDS
 
-#endif
+// Use the D-Star and YSF LEDs for FM
+#define USE_ALTERNATE_FM_LEDS
 
+#endif
